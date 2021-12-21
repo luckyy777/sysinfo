@@ -90,7 +90,7 @@ function get_ram()
 
 function get_home()
 {
-	home="$(df -h /home | grep / | awk '{print $3"/"$4 " ("$5" used)"}')"
+	home="$(df -h /home | grep / | awk '{print $3"/"$2 " ("$5" used)"}')"
 	echo "$home"
 }
 
