@@ -107,12 +107,6 @@ function get_ipv6()
 	
 }
 
-function get_privip()
-{
-	privip="$(hostname -i)"
-	echo "$privip"
-}
-
 function get_pubip()
 {
 	public_ip="$(curl -s ipecho.net/plain)"
@@ -147,7 +141,6 @@ function get_net()
 	get_colour
 	echo -e ""$colour"ipv4\t\t"$reset"$(get_ipv4)"
 	echo -e ""$colour"ipv6\t\t"$reset"$(get_ipv6)"
-	echo -e ""$colour"private ip\t"$reset"$(get_privip)"
 	echo -e ""$colour"public ip\t"$reset"$(get_pubip)\n"
 }
 
@@ -174,7 +167,6 @@ function print_help()
 	echo -e "home\t\t home partition usage"
 	echo -e "ipv4\t\t ipv4 address"
 	echo -e "ipv6\t\t ipv6 address"
-	echo -e "privip\t\t private ip address"
 	echo -e "pubip\t\t public ip address"
 }
 
@@ -199,8 +191,8 @@ else
 			"net") get_net ;;
 			"ipv4") get_ipv4 ;;
 			"ipv6") get_ipv6 ;;
-			"privip") get_privip ;;
 			"pubip") get_pubip ;;
+			"ip") get_pubip ;;
 			*) print_help; exit 0 ;;
 		esac
 	done
