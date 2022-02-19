@@ -3,4 +3,4 @@ install:
 	install -m755 sysinfo $(DESTDIR)/usr/bin
 
 uninstall:
-	rm -f $(DESTDIR)/usr/bin/minifetch
+	rm -f $(DESTDIR)/usr/bin/sysinfo
